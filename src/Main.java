@@ -1,12 +1,11 @@
-import java.io.File;
-import java.io.FileInputStream;
-
 public class Main {
 
     public static void main(String[] args) {
-        WriteObject writeObject = new WriteObject();
-        writeObject.write("bob",19);
-        ReadObject readObject = new ReadObject();
-        readObject.read();
+        Person person = new Person("name",00);
+        Car car = new Car("VW");
+        ObjectWrite writeObject = new ObjectWrite();
+        System.out.println("result ObjectWrite " + writeObject.objectWrite(person));
+        ObjectRead readObject = new ObjectRead();
+        System.out.println(readObject.objectRead(Person.class));
     }
 }
