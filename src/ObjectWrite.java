@@ -5,8 +5,8 @@ import java.io.ObjectOutputStream;
 public class ObjectWrite  {
     public <T> boolean objectWrite (T object) {
         boolean result = true;
-        try (FileOutputStream fileOutputStream = new FileOutputStream(new MyProperties().properties());
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)){
+        try (FileOutputStream fileOutputStream = new FileOutputStream(new PropertiesUtil().getProperties());
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)){
 
             objectOutputStream.writeObject(object);
         } catch (IOException e) {

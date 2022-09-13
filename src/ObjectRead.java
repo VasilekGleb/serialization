@@ -7,7 +7,7 @@ public class ObjectRead {
     public <T> T objectRead(Class<T> type) {
         T obj;
         try {
-            FileInputStream fileInputStream = new FileInputStream(new MyProperties().properties());
+            FileInputStream fileInputStream = new FileInputStream(new PropertiesUtil().getProperties());
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
             obj = type.cast(objectInputStream.readObject());
